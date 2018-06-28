@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<htmlxmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" 
+xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Gallery</title>
+
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+ 
+</head>
+
+
+<body>
+	<header>
+      <h1 class="float-l">
+        <a href="#" title="Titulo do Site">AC-SPORT</a>
+      </h1>
+      
+      <input type="checkbox" id="control-nav" />
+      <label for="control-nav" class="control-nav"></label>
+      <label for="control-nav" class="control-nav-close"></label>
+
+      <nav class="float-r">
+        <ul class="list-auto">
+          <li>
+           <a href="/ac-sport" title="Home">Home</a>
+          </li>
+          <li>
+            <a href="/produto/listar" title="Gallery">Gallery</a>
+          </li>
+          <li>
+            <a href="/Contact" title="Contact Form">Contact Form</a>
+          </li>
+          <li>
+            <a href="/about" title="About">About</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <h1>Lista de Produtos</h1> 
+    <hr>
+    <br>
+
+
+    <div class="clearfix">
+        
+          <div class="img" th:each="produto:${todosOsProdutos}">
+            
+            <img th:src="@{'/imagem/'+${produto.id}+.png}" alt="Imagem" style="width:100%">
+           
+            <center><h5 th:text="${produto.nome}"></h5></center> 
+           
+           
+            <center><span th:text = "${produto.preco}"></span></center>
+         
+          </div>
+
+     
+	</div>
+         
+
+
+<br>
+<br>
+<br>
+<center>
+ 
+<br>
+<br>
+<br>    
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer class="preto">
+            <div class="conteudo">
+               <h5> <p>© 2018 - Page created by Antonio Carlos.</p> </h5>
+                <h5> <p>Telefone: (88) 9.9358-4050</p> </h5>
+
+            </div>
+        </footer>  </center>
+
+
+</body>
+</html>

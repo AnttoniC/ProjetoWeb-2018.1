@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Form</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.mask.min.js"></script>
+  
+  <script>
+   
+
+    $(document).ready(function(){
+      $("#phone").mask("(99) 9-9999-9999");
+      $("#phone").on("blur", function() {
+          var last = $(this).val().substr( $(this).val().indexOf("-") + 1 );
+        if( last.length == 5 ) {
+            var move = $(this).val().substr( $(this).val().indexOf("-") + 1, 1 );
+          var lastfour = last.substr(1,4);
+          var first = $(this).val().substr( 0, 9 );
+          $(this).val( first + move + '-' + lastfour );
+          }
+        });
+      }); 
+  
+  </script>
+  
+</head>
+<body>
+	<header>
+      <h1 class="float-l">
+        <a href="#" title="Titulo do Site">AC-SPORT</a>
+      </h1>
+      
+      <input type="checkbox" id="control-nav" />
+      <label for="control-nav" class="control-nav"></label>
+      <label for="control-nav" class="control-nav-close"></label>
+
+      <nav class="float-r">
+        <ul class="list-auto">
+          <li>
+           <a href="/ac-sport" title="Home">Home</a>
+          </li>
+          <li>
+            <a href="/produto/listar" title="Gallery">Gallery</a>
+          </li>
+          <li>
+            <a href="/Contact" title="Contact Form">Contact Form</a>
+          </li>
+          <li>
+            <a href="/about" title="About">About</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Fale conosco</h1>
+    <hr>
+    <br>
+
+    <div class="caixa caixa6">
+                    
+                    <center><form name="formulario" action="" method="post">
+
+                            <input type="text" name="nome" placeholder="Nome" required="required"> <br><br>
+                            
+                            <input type="text" id="phone" pattern="\([0-9]{2}\) [0-9]{1}-[0-9]{4,6}-[0-9]{3,4}$" placeholder="Telefone" required=“required”><br><br>
+
+                            <input type="email" name="email" placeholder="exemplo@exemplo.com" required="required"><br><br>
+                            
+                            <textarea name="mensagem" rows="5" placeholder="Digite sua mensagem aqui ..." required="required"></textarea
+                            ><br><br>
+
+                            <input type="submit" name="enviar" value="Enviar Mensagem" class="botao botaoGrande botaoVerde bordas"><br><br>
+                    </form> </center>
+                    
+                </div>
+
+<br>
+<br>
+<br>
+<center>
+    <h7>
+      <a href="#top">Go to the top!</a>
+    </h7>
+
+<footer class="preto">
+            <div class="conteudo">
+               <h5> <p>© 2018 - Page created by Antonio Carlos.</p> </h5>
+                <h5> <p>Telefone: (88) 9.9358-4050</p> </h5>
+
+            </div>
+        </footer>  </center>
+
+</body>
+</html>

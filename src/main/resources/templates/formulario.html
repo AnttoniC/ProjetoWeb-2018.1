@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Contact Form</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+ 
+  
+</head>
+<body>
+	<header>
+      <h1 class="float-l">
+        <a href="#" title="Titulo do Site">AC-SPORT</a>
+      </h1>
+      
+      <input type="checkbox" id="control-nav" />
+      <label for="control-nav" class="control-nav"></label>
+      <label for="control-nav" class="control-nav-close"></label>
+
+      <nav class="float-r">
+        <ul class="list-auto">
+          <li>
+           <a href="/ac-sport" title="Home">Home</a>
+          </li>
+          <li>
+            <a href="/produto/listar" title="Gallery">Gallery</a>
+          </li>
+          <li>
+            <a href="/Contact" title="Contact Form">Contact Form</a>
+          </li>
+          <li>
+            <a href="/about" title="About">About</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Cadastro de Pessoas</h1>
+    <hr>
+    <br>
+
+    <div class="caixa caixa6">
+                    
+                    <center><form name="formulario" action="/pessoa/salvar" method="post" enctype="multipart/form-data">
+
+                            <input type="text" name="nome" placeholder="Nome" required="required"> <br><br>
+                            
+                            <input type="text" name="CPF" placeholder="000.000.000-00" required="required"> <br><br>
+                            
+                            <input type="text" name="data_N" placeholder="00/00/0000" required="required"> <br><br>
+                            
+                           <input type="text" name="end" placeholder="Endereço" required="required"> <br><br>
+                            
+                            <input type="text" name="login" placeholder="Usuário" required="required"> <br><br>
+                           
+                            <input type="text" name="senha" placeholder="Senha" required="required"> <br><br>
+                            
+                            <input type="submit" name="enviar" value="Enviar Mensagem" class="botao botaoGrande botaoVerde bordas"><br><br>
+                            
+  
+                            <input sec:authorize="hasRole('ADMIN')"> <a th:href="@{/pessoa/{id}(id = ${pessoa.id})}"><button type="button" class="btn btn-primary">Atualizar</button></a> </<input>
+    
+      					    <input sec:authorize="hasRole('ADMIN')"> <a class="btn btn-danger" th:href="@{/pessoa/excluir/{id}(id = ${pessoa.id})}"> Excluir </a> </input>
+
+
+                   
+                    </form> </center>
+                        
+                    
+                </div>
+                
+                
+
+<br>
+<br>
+<br>
+<center>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<footer class="preto">
+            <div class="conteudo">
+               <h5> <p>© 2018 - Page created by Antonio Carlos.</p> </h5>
+                <h5> <p>Telefone: (88) 9.9358-4050</p> </h5>
+
+            </div>
+        </footer>  </center>
+
+</body>
+</html>
